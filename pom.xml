@@ -35,14 +35,30 @@
         </dependency>
     </dependencies>
 
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>cleanXSD</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
                 <version>0.14.0</version>
                 <executions>
                     <execution>
+                        <id>cris</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
